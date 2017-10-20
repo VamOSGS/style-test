@@ -3,21 +3,27 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Color from './Color';
 
-const ColorsListDiv = ({ colors, className }) => (
+const ColorsListDiv = ({
+  colorsObj, globalColorName, globalColorValue, className,
+}) => (
   <div className={className}>
-    {colors.map(color => <Color key={color} color={color} />)}
+    <Color key={globalColorValue} colorName={globalColorName} color={globalColorValue} />
+    {Object.entries(colorsObj).map(colorData => (
+      <Color key={colorData[1]} colorName={colorData[0]} color={colorData[1]} />
+    ))}
   </div>
 );
 
 ColorsListDiv.propTypes = {
-  colors: PropTypes.arrayOf(PropTypes.string),
+  colorsObj: PropTypes.objectOf(PropTypes.string),
+  globalColorName: PropTypes.string,
+  globalColorValue: PropTypes.string,
   className: PropTypes.string,
 };
 
 const ColorsList = styled(ColorsListDiv)`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: minmax(50px, auto);
+  grid-auto-rows: minmax(54px, auto);
 `;
 
 export default ColorsList;
