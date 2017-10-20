@@ -14,12 +14,13 @@ WrapperDiv.propTypes = {
 };
 
 const Wrapper = styled(WrapperDiv)`
-  width: 1024px;
+  max-width: 1024px;
+  padding: 15px;
   margin: 0 auto;
   margin-top: 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
   grid-row-gap: 30px;
   justify-items: stretch;
 `;
