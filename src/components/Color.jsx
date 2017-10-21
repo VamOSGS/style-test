@@ -33,7 +33,7 @@ const Color = styled(ColorDiv)`
   align-items: center;
   padding: 10px;
   cursor: pointer;
-  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
   :hover {
     z-index: 100;
     transform: scale(1.1);
