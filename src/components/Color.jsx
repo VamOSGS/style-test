@@ -10,12 +10,8 @@ const ColorDiv = ({ color, colorName, className }) => {
   return (
     <CopyToClipboard text={color}>
       <div className={className} style={{ backgroundColor: color, color: textColor }}>
-        <div>
-          {colorName}
-        </div>
-        <div style={{ justifySelf: 'end' }}>
-          {color}
-        </div>
+        <div>{colorName}</div>
+        <div style={{ justifySelf: 'end' }}>{color}</div>
       </div>
     </CopyToClipboard>
   );
@@ -28,16 +24,17 @@ ColorDiv.propTypes = {
 };
 
 const Color = styled(ColorDiv)`
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   padding: 10px;
   cursor: pointer;
+  font-family: Roboto, sans-serif;
   transition: transform 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
   :hover {
     z-index: 100;
     transform: scale(1.1);
-    box-shadow: 0px 5px 5px rgba(68,68,68,0.4);
+    box-shadow: 0px 5px 5px rgba(68, 68, 68, 0.4);
   }
 `;
 
